@@ -1,4 +1,8 @@
+CXX=clang++ -std=c++11 -stdlib=libc++
+CXXFLAGS=`wx-config --cxxflags`
+LDFLAGS=`wx-config --libs`
+
 all:
-	clang++ -std=c++11 -stdlib=libc++ main.cpp `wx-config --libs` `wx-config --cxxflags` -o helloworld
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) main.cpp -o helloworld
 clean:
 	rm helloworld
